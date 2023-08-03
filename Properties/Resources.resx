@@ -128,10 +128,10 @@
     <value>..\Resources\move_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reference_region_1080p_left_x" xml:space="preserve">
-    <value>732</value>
+    <value>736</value>
   </data>
   <data name="reference_region_1080p_top_y" xml:space="preserve">
-    <value>102</value>
+    <value>104</value>
   </data>
   <data name="reference_region_1440p_left_x" xml:space="preserve">
     <value>979</value>

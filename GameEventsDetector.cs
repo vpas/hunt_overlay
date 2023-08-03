@@ -21,7 +21,7 @@ namespace hunt_overlay {
 
         public GameEventsDetector(
             int checkIntervalMillisec = 1000, 
-            int maxNormalizedPerPixelDiff = 10)
+            int maxNormalizedPerPixelDiff = 20)
         {
             this.checkIntervalMillisec = checkIntervalMillisec;
             this.maxNormalizedPerPixelDiff = maxNormalizedPerPixelDiff;
@@ -58,7 +58,7 @@ namespace hunt_overlay {
                     size: referenceRegionBitmap.Size
                 );
             } else {
-                Console.WriteLine($"Unsupported screen width: {screenHeight}");
+                Console.WriteLine($"Unsupported screen Height: {screenHeight}");
             }
         }
 
@@ -102,19 +102,19 @@ namespace hunt_overlay {
             return bitmap;
         }
 
-        private static float CalcBitmapDiff(Bitmap bitmap1, Bitmap bitmap2) {
-            int diff_sum = 0;
+        private static double CalcBitmapDiff(Bitmap bitmap1, Bitmap bitmap2) {
+            int diff_sqr_sum = 0;
             Debug.Assert(bitmap1.Size == bitmap2.Size);
             for (int x = 0; x < bitmap1.Size.Width; x++) {
                 for (int y = 0; y < bitmap1.Size.Height; y++) {
                     var p1 = bitmap1.GetPixel(x, y);
                     var p2 = bitmap2.GetPixel(x, y);
-                    diff_sum += Math.Abs(p1.R - p2.R);
-                    diff_sum += Math.Abs(p1.G - p2.G);
-                    diff_sum += Math.Abs(p1.B - p2.B);
+                    diff_sqr_sum += Math.Abs(p1.R - p2.R) * Math.Abs(p1.R - p2.R);
+                    diff_sqr_sum += Math.Abs(p1.G - p2.G) * Math.Abs(p1.G - p2.G);
+                    diff_sqr_sum += Math.Abs(p1.B - p2.B) * Math.Abs(p1.B - p2.B);
                 }
             }
-            return ((float)diff_sum) / (bitmap1.Size.Width * bitmap1.Size.Height);
+            return Math.Sqrt(((double)diff_sqr_sum) / (bitmap1.Size.Width * bitmap1.Size.Height * 3));
         }
 
         private static Bitmap CaptureScreenRegion(Rectangle rect) {

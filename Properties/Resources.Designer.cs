@@ -91,7 +91,7 @@ namespace hunt_overlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 732.
+        ///   Looks up a localized string similar to 736.
         /// </summary>
         internal static string reference_region_1080p_left_x {
             get {
@@ -100,7 +100,7 @@ namespace hunt_overlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 102.
+        ///   Looks up a localized string similar to 104.
         /// </summary>
         internal static string reference_region_1080p_top_y {
             get {
