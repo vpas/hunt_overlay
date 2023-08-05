@@ -73,6 +73,16 @@ namespace hunt_overlay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hunt_death_reference_region_1200p {
+            get {
+                object obj = ResourceManager.GetObject("hunt_death_reference_region_1200p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hunt_death_reference_region_1440p {
             get {
                 object obj = ResourceManager.GetObject("hunt_death_reference_region_1440p", resourceCulture);
@@ -105,6 +115,24 @@ namespace hunt_overlay.Properties {
         internal static string reference_region_1080p_top_y {
             get {
                 return ResourceManager.GetString("reference_region_1080p_top_y", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 734.
+        /// </summary>
+        internal static string reference_region_1200p_left_x {
+            get {
+                return ResourceManager.GetString("reference_region_1200p_left_x", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 164.
+        /// </summary>
+        internal static string reference_region_1200p_top_y {
+            get {
+                return ResourceManager.GetString("reference_region_1200p_top_y", resourceCulture);
             }
         }
         

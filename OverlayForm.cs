@@ -49,9 +49,20 @@ namespace hunt_overlay {
             this.playerName2.Text = data.playerName2;
             this.playerScore1.Text = data.playerScore1.ToString();
             this.playerScore2.Text = data.playerScore2.ToString();
+
             this.roundInfo.Text = data.roundInfo;
+            CenterControl(roundInfo);
+            roundInfo.Refresh();
+
             this.message.Text = data.message;
+            CenterControl(message);
+            message.Refresh();
+
             UpdateTimer(data.timerMillisec);
+        }
+
+        private void CenterControl(Control control) {
+            control.Left = (this.ClientSize.Width - control.Width) / 2;
         }
 
         private void SetTopCenterPosition(int marginTopPct = 5) {
@@ -72,7 +83,7 @@ namespace hunt_overlay {
             this.Location = new Point(topCenterX, topCenterY);
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void button1_Cxczsdlick(object sender, EventArgs e) {
             Point pt = Cursor.Position; // Get the mouse cursor in screen coordinates
 
             using (Graphics g = Graphics.FromHwnd(IntPtr.Zero)) {
@@ -86,6 +97,10 @@ namespace hunt_overlay {
 
         private void deathButton_Click(object sender, EventArgs e) {
             dataController.OnPlayerDeath();
+        }
+
+        private void respawnButton_Click(object sender, EventArgs e) {
+            dataController.OnPlayerRespawn();
         }
 
         //protected override void OnPaintBackground(PaintEventArgs e) {

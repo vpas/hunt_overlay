@@ -57,6 +57,15 @@ namespace hunt_overlay {
                     ),
                     size: referenceRegionBitmap.Size
                 );
+            } else if (screenHeight == 1200) {
+                referenceRegionBitmap = Properties.Resources.hunt_death_reference_region_1200p;
+                screenRegionRect = new Rectangle(
+                    location: new Point(
+                        int.Parse(Properties.Resources.reference_region_1200p_left_x),
+                        int.Parse(Properties.Resources.reference_region_1200p_top_y)
+                    ),
+                    size: referenceRegionBitmap.Size
+                );
             } else {
                 Console.WriteLine($"Unsupported screen Height: {screenHeight}");
             }

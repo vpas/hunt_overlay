@@ -58,12 +58,12 @@ namespace hunt_overlay {
 
         public void OnPlayerRespawn() {
             Console.WriteLine("DataController.OnPlayerRespawn");
-            //var url = $"{matchUrl}/{match.id}/respawn?playerName={playerName}";
-            //var response = httpClient.GetAsync(url).Result;
-            //var responseBody = response.Content.ReadFromJsonAsync<ServerResponse>().Result;
-            //Console.WriteLine(responseBody.message);
-            //LogErrorIfFound(responseBody);
-            //FetchMatchData();
+            var url = $"{matchUrl}/{match.id}/respawn?playerName={playerName}";
+            var response = httpClient.GetAsync(url).Result;
+            var responseBody = response.Content.ReadFromJsonAsync<ServerResponse>().Result;
+            Console.WriteLine(responseBody.message);
+            LogErrorIfFound(responseBody);
+            FetchMatchData();
         }
 
         public void OnGameReset() {

@@ -3,8 +3,12 @@ using System.Net.Http.Json;
 using System.Security.Policy;
 using System.Text.Json;
 
+
 namespace hunt_overlay {
     internal static class Program {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -13,6 +17,8 @@ namespace hunt_overlay {
             using (Process p = Process.GetCurrentProcess()) {
                 p.PriorityClass = ProcessPriorityClass.BelowNormal;
             }
+
+            SetProcessDPIAware();
 
             string? playerName = null;
             while (playerName == null) {
